@@ -14,61 +14,6 @@ body {
   text-align: center;
 }
 
-/* Welcome Section */
-#welcome {
-  position: relative;
-  text-align: left;
-}
-#welcome .welcome {
-  max-width: 1200px;
-  margin-top: 100px;
-  padding: 0 50px;
-  justify-content: flex-start;
-}
-#welcome h1 {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-weight: 500;
-  display: block;
-  width: fit-content;
-  font-size: 3rem;
-  position: relative;
-  color: transparent;
-  animation: text_reveal 0.5s ease forwards;
-  animation-delay: 1.5s;
-}
-#welcome h1:nth-child(1) {
-  animation-delay: 1.5s;
-}
-#welcome h1:nth-child(2) {
-  animation-delay: 3.5s;
-}
-#welcome h1:nth-child(3) {
-  animation: text_reveal_name 0.5s ease forwards;
-  animation-delay: 4.5s;
-}
-#welcome h1 span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 0;
-  background-color: coral;
-  animation: text_reveal_box 1s ease;
-  animation-delay: 1s;
-}
-#welcome h1:nth-child(1) span {
-  animation-delay: 1s;
-}
-#welcome h1:nth-child(2) span {
-  animation-delay: 3s;
-}
-#welcome h1:nth-child(3) span {
-  animation-delay: 4s;
-}
-/* End Welcome Section */
-
 /* Header Section*/
 #main-header {
   text-align: center;
@@ -174,21 +119,17 @@ p1 {
   color: coral;
 }
 
-#about .role {
-  margin-top: 50px;
-}
 #about .role span {
   color: coral;
 }
 
 #about .col-right a {
-  text-decoration: none;
   display: inline-block;
   color: rgb(255, 255, 255);
-  background-color: coral;
+  background-color: transparent;
   margin-bottom: 30px;
-  border-radius: 10%; /*10%*/
-  border: 6px solid rgb(0, 0, 0);
+  border-radius: 10%;
+  border: 4px solid coral;
   font-size: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 0.1 rem;
@@ -201,11 +142,13 @@ p1 {
 #about .col-right a:hover {
   background-color: rgb(255, 255, 255);
   color: black;
-  border: 6px solid coral;
+  border: 4px solid coral;
 }
 /* End About section */
 
 /* Courses Section*/
+#courses {
+}
 
 #courses .courses {
   flex-direction: column;
@@ -218,7 +161,7 @@ p1 {
   font-size: 3rem;
   font-weight: 300;
   color: black;
-  margin-bottom: 100px;
+  margin-bottom: 10px;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   text-align: center;
@@ -229,7 +172,6 @@ p1 {
 #courses .courses-top p {
   font-size: 1.5rem;
   margin-top: 20px;
-  margin-bottom: 80px;
   line-height: 2.5rem;
   font-weight: 300;
   letter-spacing: 0.05rem;
@@ -243,29 +185,24 @@ p1 {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  width: 60%;
-  margin: auto;
 }
+
 #courses ul {
   list-style-type: none;
 }
+
 #courses .courses-item {
   flex-basis: 80%;
   display: flex;
   justify-content: center;
   flex-direction: column;
   padding: 30px;
-  border-radius: 50px;
-  background-image: url("img/course.jpg");
+  border-radius: 10px;
+  background-image: url("img/science.jpg");
   background-size: cover;
   margin: 10px 5%;
   position: relative;
   z-index: 1;
-  margin-bottom: 80px;
-  border: 10px solid black;
-}
-#courses .courses-item:hover {
-  border: 10px solid white;
 }
 #courses .courses-item::after {
   content: "";
@@ -278,7 +215,16 @@ p1 {
   opacity: 0.8;
   z-index: -1;
 }
-
+#courses .col-right .icon {
+  height: 80px;
+  width: 80px;
+  margin-bottom: 20px;
+}
+#courses .col-right .icon img {
+  border: 2px solid coral;
+  border-radius: 90%;
+  z-index: -1;
+}
 /* End Courses Section*/
 
 /* Footer Section*/
@@ -338,27 +284,3 @@ p1 {
 }*/
 
 /* End Footer Section*/
-
-/* Keyframes */
-@keyframes text_reveal_box {
-  50% {
-    width: 100%;
-    left: 0%;
-  }
-  100% {
-    width: 0;
-    left: 100%;
-  }
-}
-@keyframes text_reveal {
-  100% {
-    color: white;
-  }
-}
-@keyframes text_reveal_name {
-  100% {
-    color: coral;
-    font-weight: 500;
-  }
-}
-/* End Keyframes */
