@@ -1,0 +1,26 @@
+{
+  "name": "mywebsite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alphaka/PersonalWebsite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alphaka/PersonalWebsite/issues"
+  },
+  "homepage": "https://github.com/alphaka/PersonalWebsite#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "nodemailer": "^6.6.3",
+    "nodemailer-mailgun-transport": "^2.1.3"
+  }
+}
