@@ -1,13 +1,13 @@
 const express = require("express");
-const nodemailer = require("nodemailer");
+const sendMail = require("./mail");
 const path = require("path");
 const app = express();
 
-const PORT = 3000;
 const log = console.log;
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+
 // Static folder
 app.use(express.static(__dirname + "/public"));
 
@@ -20,17 +20,14 @@ app.get("/", (req, res) => {
 });
 
 app.post("/contact", (req, res) => {
-  const output = `
-    <p>You have a new contact request</p>
-    <h3>Contact Details</h3>
-    <ul>
-      <li>Name: ${req.body.name}
-      <li>Email: ${req.body.email}
-      <li>Subject: ${req.body.subject}
-      <li>Message: ${req.body.message}
-    </ul>
-  `;
-  res.send(req.body);
+  const { name, email, subject, message } = req.body;
+  sendMail(name, email, subject, message, function (err, data) {
+    if (err) {
+      res.status(500).send({ message: "Internal Error" });
+    } else {
+      res.render("contact", { name, email });
+    }
+  });
 });
 
-app.listen(PORT, () => log("Server is starting on PORT, ", PORT));
+app.listen(3000, () => log("Server is starting on PORT 3000"));
